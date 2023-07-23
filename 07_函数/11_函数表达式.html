@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>11_函数表达式</title>
+    </head>
+    <body>
+        <script>
+            // 1.函数表达式
+            // 函数表达式必须写在定义之后
+            // fn(); // Uncaught ReferenceError: Cannot access 'fn' before initialization
+            let fn = function (x, y) {
+                console.log("我是函数表达式");
+                return x + y;
+            };
+            let result = fn(1, 2);
+            console.log(result);
+
+            // 函数表达式和具名函数的不同 function fn() {}
+            fun(); // 具名函数的调用可以写到任何位置
+            function fun() {
+                console.log(1);
+            }
+        </script>
+    </body>
+</html>

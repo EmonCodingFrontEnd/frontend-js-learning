@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>05_得到时间戳</title>
+    </head>
+    <body>
+        <script>
+            // 1.getTime()
+            const date = new Date();
+            console.log(date.getTime());
+            // 2.+new Date()
+            console.log(+new Date());
+            console.log(+new Date("2023-7-9 18:30:00"));
+            // 3.Date.now();
+            console.log(Date.now());
+
+            // 我要根据日期Day() 0~6 返回星期
+            // prettier-ignore
+            const weekArr = ['星期天', '星期一',' 星期二', '星期三', '星期四', '星期五']
+            console.log(weekArr[new Date().getDay()]);
+        </script>
+    </body>
+</html>

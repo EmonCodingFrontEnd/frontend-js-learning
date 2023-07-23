@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>03_数组扩展最大值和求和方法</title>
+    </head>
+    <body>
+        <script>
+            // 自己定义 数组扩展方法 “求和” 和 “最大值”
+            // 1.我们定义的这个方法，任何一个数组实例对象都可以使用。
+            // const arr = [1, 2, 3];
+            // const arr = new Array(1, 2);
+            // console.log(arr);
+
+            // 2.自定义的方法写到数组.prototype身上
+            // 最大值
+            Array.prototype.max = function () {
+                return Math.max(...this);
+            };
+            console.log([2, 5, 9].max());
+
+            // 最小值
+            Array.prototype.min = function () {
+                return Math.min(...this);
+            };
+            console.log([2, 5, 9].min());
+
+            // 3.求和方法
+            Array.prototype.sum = function () {
+                if (!this.every((item) => typeof item === "number")) {
+                    return "无法对非number元素求和";
+                }
+                return this.reduce((prev, current) => prev + current);
+            };
+            console.log([2, "s", 9].sum());
+            console.log([2, 5, 9].sum());
+        </script>
+    </body>
+</html>

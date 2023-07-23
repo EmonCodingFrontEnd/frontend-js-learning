@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>02_全局作用域</title>
+    </head>
+    <body>
+        <script>
+            // 全局作用域
+            let a = 1;
+            let b = 2;
+            // 局部作用域
+            function f() {
+                let a = 1;
+                // 局部作用域
+                function g() {
+                    a = 2;
+                    console.log(a); // 2
+                }
+                g(); // 调用g
+            }
+            f(); // 调用f
+        </script>
+    </body>
+</html>

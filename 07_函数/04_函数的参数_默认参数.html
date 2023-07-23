@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>04_函数的参数_默认参数</title>
+    </head>
+    <body>
+        <script>
+            // 函数求和
+            function getSum(num1 = 0, num2 = 0) {
+                // 如果没有形参默认值，在用户不输入实参时，结果是： undefiend + undefined = NaN
+                document.write(`${num1} + ${num2} = ${num1 + num2}<br>`);
+            }
+            getSum(1, 2);
+            getSum();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>09_作用域</title>
+    </head>
+    <body>
+        <script>
+            let num = 10; // 1.全局变量
+            console.log(num); // 10
+            function fn() {
+                console.log(num); // 10
+            }
+            fn();
+
+            // 2.局部变量
+            function fun() {
+                let str = "pink";
+                console.log(str); // pink
+            }
+            fun();
+            // console.log(str); // Uncaught ReferenceError: str is not defined
+        </script>
+    </body>
+</html>

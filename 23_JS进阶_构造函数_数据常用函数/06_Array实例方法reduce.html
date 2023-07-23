@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>06_Array实例方法reduce</title>
+    </head>
+    <body>
+        <script>
+            // 数组reduce方法
+            // arr.reduce(function(上一次值, 当前值){}, 起始值);
+            const arr = [1, 5, 8];
+            // 1.没有初始值
+            // const total = arr.reduce(function (prev, current) {
+            //     console.log(prev, current); // 第一次 1和5，第二次 6和8 共迭代2次
+            //     return prev + current;
+            // });
+            // console.log(total); // 14
+
+            // 2.有初始值
+            // const total = arr.reduce(function (prev, current) {
+            //     console.log(prev, current); // 第一次 0和1，第二次 1和5， 第三次 6和8 共迭代3次
+            //     return prev + current;
+            // }, 0);
+            // console.log(total); // 14
+
+            // 3.箭头函数的写法
+            // const total = arr.reduce((prev, current) => prev + current);
+            // console.log(total); // 14
+        </script>
+    </body>
+</html>

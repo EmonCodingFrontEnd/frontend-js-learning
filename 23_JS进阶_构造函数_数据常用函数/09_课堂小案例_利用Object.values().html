@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>09_课堂小案例_利用Object.values()</title>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            const spec = { size: "40cm*40cm", color: "黑色" };
+            const result = Object.values(spec).join("/");
+            console.log(result);
+            document.querySelector("div").innerHTML = result;
+        </script>
+    </body>
+</html>

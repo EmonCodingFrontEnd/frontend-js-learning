@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>12_课堂小案例_String的函数式调用</title>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            const gift = "50g的茶叶,清洗球";
+            // 1.把字符串拆分为数组
+            // console.log(gift.split(","));
+            // 2.根据数组元素的个数，生成对应的span标签
+            const result = gift
+                .split(",")
+                .map((item) => `<span>【赠品】${item}</span>`)
+                .join(",");
+            document.querySelector("div").innerHTML = result;
+        </script>
+    </body>
+</html>

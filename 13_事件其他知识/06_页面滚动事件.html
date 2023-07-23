@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>06_页面滚动事件</title>
+        <style>
+            body {
+                height: 3000px;
+                padding-top: 300px;
+            }
+            div {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #000;
+                overflow: scroll;
+                margin: 100px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- prettier-ignore  -->
+        <div>
+            我里面有很多很多的文字。 
+            我里面有很多很多的文字。
+            我里面有很多很多的文字。 
+            我里面有很多很多的文字。
+            我里面有很多很多的文字。 
+            我里面有很多很多的文字。
+            我里面有很多很多的文字。 
+            我里面有很多很多的文字。
+            我里面有很多很多的文字。 
+            我里面有很多很多的文字。
+            我里面有很多很多的文字。
+        </div>
+        <script>
+            // 页面滚动事件
+            // window.addEventListener("scroll", function () {
+            //     console.log(document.documentElement.scrollTop);
+            // });
+
+            // div滚动事件
+            // const div = document.querySelector("div");
+            // div.addEventListener("scroll", function () {
+            //     // 被卷去的头部
+            //     let n = this.scrollTop;
+            //     console.log(n);
+            // });
+
+            // 页面滚动事件
+            const div = document.querySelector("div");
+            window.addEventListener("scroll", function () {
+                // 我想知道页面到底滚动了多少像素，被卷去了多少 scrollTop
+                // 获取 html 元素写法【特殊用法】
+                let n = document.documentElement.scrollTop;
+                console.log(n);
+                if (n > 100) {
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+            });
+        </script>
+    </body>
+</html>

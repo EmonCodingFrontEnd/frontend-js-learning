@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>10_continue和break退出循环</title>
+    </head>
+    <body>
+        <script>
+            /* // 打印5句话
+            let i = 1;
+            let n;
+            while ((n = i++) <= 5) {
+                if (n === 3) {
+                    break;
+                }
+                document.write(`我要吃第${n}个包子<br>`);
+            } */
+
+            // 打印5句话
+            let i = 1;
+            while (i <= 5) {
+                if (i === 3) {
+                    i++;
+                    continue;
+                }
+                document.write(`我要吃第${i}个包子<br>`);
+                i++;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>09_猜数字游戏</title>
+    </head>
+    <body>
+        <script>
+            // 1.随机生成一个数字1-10
+            function getRandom(n = 0, m = 1) {
+                n = n < 0 ? 0 : n;
+                m = m < 1 ? 1 : m;
+                if (n >= m) {
+                    throw new Error(`n=${n} must be less than m=${m}!`);
+                }
+                return Math.floor(Math.random() * (m - n + 1)) + n;
+            }
+            let random = getRandom(1, 10);
+            console.log(random);
+
+            let n = 1;
+            do {
+                // 2.用户输入一个值
+                let num = +prompt("请输入你猜的数字：");
+
+                // 3.判断输出
+                alert(
+                    `你猜${
+                        random > num ? "小了" : random < num ? "大了" : "对了"
+                    }`
+                );
+                if (random === num) {
+                    break;
+                }
+            } while (n++ < 3);
+        </script>
+    </body>
+</html>

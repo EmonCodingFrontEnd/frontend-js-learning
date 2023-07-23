@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>08_Array常用方法</title>
+    </head>
+    <body>
+        <script>
+            // 1.find查找 返回符合测试条件的第一个数组元素值，如果没有符合条件的则返回undefined（重点）
+            // const arr = ["red", "blue", "green"];
+            // const matchec = arr.find(function (value, index) {
+            //     return value === "blue";
+            // });
+            // console.log(matchec);
+
+            // const arr = [
+            //     { name: "小米", price: 1999 },
+            //     { name: "华为", price: 3999 },
+            // ];
+            // const matched = arr.find((value) => value.name === "小米");
+            // console.log(matched); // {name: '小米', price: 1999}
+
+            // 2.every 检测数组是否所有元素是否都符合指定条件，如果所有元素都通过检测则返回true，否则返回false（重点）
+            const arr1 = [10, 20, 30];
+            const flag = arr1.every((item) => item >= 10);
+            console.log(flag); // true
+        </script>
+    </body>
+</html>

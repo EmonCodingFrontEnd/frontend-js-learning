@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>01_对象的使用</title>
+    </head>
+    <body>
+        <script>
+            // 1.声明对象
+            let pink = {
+                uname: "pink",
+                age: 18,
+                gender: "女",
+            };
+            console.log(pink);
+            console.log(typeof pink); // object
+            // 查询属性：方式一
+            console.log(pink.uname);
+            console.log(pink["uname"]);
+            // 查询属性：方式二
+            // 修改属性
+            pink.gender = "男";
+            console.log(pink);
+            // 添加属性
+            pink.hobby = "足球";
+            console.log(pink);
+            // 删除属性
+            delete pink.age;
+            console.log(pink); // 输出的内容，不再包含age属性
+
+            let goods = {
+                name: "小米10青春版",
+                num: "11002388982",
+                weight: "0.55kg",
+                address: "中国大陆",
+            };
+            // 修改属性
+            goods.name = "小米10 PLUS";
+            // 新增属性
+            goods.color = "粉色";
+            console.log(goods);
+        </script>
+    </body>
+</html>

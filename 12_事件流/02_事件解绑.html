@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>02_事件解绑</title>
+    </head>
+    <body>
+        <button>点击</button>
+        <script>
+            const btn = document.querySelector("button");
+            // btn.onclick = function () {
+            //     alert("点击了");
+            //     // L0 解除绑定事件
+            //     btn.onclick = null;
+            // };
+
+            function func() {
+                alert("点击了");
+                btn.removeEventListener("click", func);
+            }
+            // L2 解除绑定事件
+            btn.addEventListener("click", func);
+        </script>
+    </body>
+</html>

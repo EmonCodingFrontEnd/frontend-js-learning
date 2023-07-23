@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>15_对象解构</title>
+    </head>
+    <body>
+        <script>
+            // 对象解构
+            const obj = {
+                uname: "pink",
+                age: 18,
+            };
+
+            // 解构的语法 属性名和变量名，必须一致才可以
+            // const { uname, age } = obj;
+            // console.log(uname, age); // pink 18
+
+            // 1.对象解构的变量名，可以重新改名 {旧变量名: 新变量名}
+            // const { uname: username, age } = obj;
+            // console.log(username); // pink
+
+            // 2.解构数组对象
+            const pig = [
+                {
+                    uname: "佩奇",
+                    family: {
+                        mother: "猪妈妈",
+                        father: "猪爸爸",
+                        sister: "乔治",
+                    },
+                    age: 6,
+                },
+            ];
+            const [
+                {
+                    age,
+                    uname,
+                    family: { mother },
+                },
+            ] = pig;
+            console.log(uname, age, mother);
+        </script>
+    </body>
+</html>

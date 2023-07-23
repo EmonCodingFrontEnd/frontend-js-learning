@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>04_constructor属性</title>
+    </head>
+    <body>
+        <script>
+            // constructor 单词，构造函数
+            // function Star() {}
+            // const ldh = new Star();
+            // console.log(Star.prototype.constructor === Star); // true
+
+            // function Star(name) {
+            //     this.name = name;
+            // }
+            // Star.prototype = {
+            //     sing: function () {
+            //         console.log("唱歌！");
+            //     },
+            //     dance: function () {
+            //         console.log("跳舞！");
+            //     },
+            // };
+            // console.dir(Star.prototype.constructor); // 指向了Object
+
+            function Star(name) {
+                this.name = name;
+            }
+            Star.prototype = {
+                // 手动利用constructor，指回Star构造函数
+                constructor: Star,
+                sing: function () {
+                    console.log("唱歌！");
+                },
+                dance: function () {
+                    console.log("跳舞！");
+                },
+            };
+            console.log(Star.prototype.constructor); // 指向Star
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>11_for循环的基本使用</title>
+    </head>
+    <body>
+        <script>
+            /* // 利用for循环输出三句话
+                        for (let i = 1; i <= 3; i++) {
+                            document.write(`我说的第${i}句话<br>`);
+                        } */
+
+            /* // 求和1-100
+                        let sum = 0;
+                        for (let i = 1; i <= 100; i++) {
+                            sum += i;
+                        }
+                        document.write(`1-100求和：${sum}`); */
+
+            // 打印数组
+            /* let arr = ["刘德华", "刘晓庆", "刘晓强", "刘若英", "流水无情"];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === "刘若英") {
+                    continue;
+                }
+                document.write(`第${i + 1}个元素：${arr[i]}<br>`);
+            }
+
+            // arr.forEach((element) => {
+            //     document.write(`${element}<br>`);
+            // }); */
+
+            // for的死循环
+            let i = 0;
+            for (;;) {
+                if (++i > 100) {
+                    break;
+                }
+                document.write(`我只输出100次，当前第${i}次<br>`);
+            }
+        </script>
+    </body>
+</html>

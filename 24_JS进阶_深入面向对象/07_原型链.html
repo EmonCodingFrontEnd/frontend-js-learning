@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>07_原型链</title>
+    </head>
+    <body>
+        <script>
+            // function Object() {}
+            function Star() {}
+            const ldh = new Star();
+
+            console.log(ldh instanceof Star); // true
+            console.log(ldh instanceof Object); // true
+            console.log(Array instanceof Object); // true
+            console.log(ldh instanceof Array); // false
+            console.log([1, 2, 3] instanceof Array); // true
+
+            // ==================================================
+
+            console.log(ldh.__proto__ === Star.prototype); // true
+            console.log(ldh.__proto__.constructor === Star); // true
+
+            console.log(Star.prototype.__proto__ === Object.prototype); // true
+            console.log(Star.prototype.__proto__.constructor === Object); // true
+
+            // ==================================================
+
+            console.log(Object.__proto__); // ƒ () { [native code] }
+            console.log(Object.prototype); // {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+            console.log(Object.prototype.__proto__); // null
+
+            // ==================================================
+
+            console.log(Array.prototype.constructor === Array); // true
+            console.log(Array.prototype.__proto__.constructor === Object); // true
+            // prettier-ignore
+            console.log( Array.prototype.__proto__ === Object.prototype ); // true
+            console.log(Array.prototype.__proto__.__proto__); // null
+        </script>
+    </body>
+</html>

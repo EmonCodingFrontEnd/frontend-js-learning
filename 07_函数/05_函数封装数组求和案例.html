@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>05_函数封装数组求和案例</title>
+    </head>
+    <body>
+        <script>
+            // 函数求和
+            function getArrSum(arr = []) {
+                let sum = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i];
+                }
+                document.write(`数组${arr}求和=${sum}<br>`);
+            }
+            getArrSum([1, 2, 3, 4, 5]);
+            getArrSum();
+        </script>
+    </body>
+</html>

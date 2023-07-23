@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>04_数组操作_新增</title>
+    </head>
+    <body>
+        <script>
+            let arr = ["pink", "hotpink"];
+
+            // 新增方式一
+            arr[2] = 2;
+            console.log(arr);
+
+            // 新增方式二
+            let len2 = arr.push("deeppink");
+            console.log(arr, len2);
+            let len3 = arr.push("A", "B");
+            console.log(arr, len3);
+
+            // 新增方式三
+            let len4 = arr.unshift("lightpink");
+            console.log(arr, len4);
+            let len5 = arr.unshift("C", "D");
+            console.log(arr, len5);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>11_普通函数的this指向</title>
+    </head>
+    <body>
+        <button>点击</button>
+        <script>
+            // "use strict"; // 是否开启严格模式
+
+            // console.log(this); // window
+
+            // 普通函数没有明确调用者时，this值为window；严格模式下没有调用时this指向undefined。
+            // function fn() {
+            //     console.log(this); // window
+            // }
+            // fn();
+
+            // setTimeout(function () {
+            //     console.log(this); // window
+            // }, 1000);
+
+            // document
+            //     .querySelector("button")
+            //     .addEventListener("click", function () {
+            //         console.log(this); // button
+            //     });
+
+            // const obj = {
+            //     sayHi: function () {
+            //         console.log(this); // obj
+            //     },
+            // };
+            // obj.sayHi();
+        </script>
+    </body>
+</html>

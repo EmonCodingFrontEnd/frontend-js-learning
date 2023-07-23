@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>07_隐式转换</title>
+    </head>
+    <body>
+        <script>
+            console.log(1 + 1); // 2
+            console.log("pink" + 1); // pink1
+
+            console.log(2 - 2); // 0
+            console.log(2 + "2"); // 22
+            console.log(2 - "2"); // 0
+            console.log(+12); // 12
+            console.log(+"123"); // 123 转换为数字类型
+            console.log(+"-123"); // -123 转换为数字类型
+            console.log(-"-123"); // 123 转换为数字类型
+            console.log(+"123s"); // NaN
+        </script>
+    </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>学生就业统计表</title>
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+        <h1>学生就业统计表</h1>
+        <form class="info" autocomplete="off">
+            姓名：<input type="text" class="uname" name="uname" />
+            <!-- prettier-ignore -->
+            年龄：<input type="text" class="age" name="age" />
+            性别:
+            <select name="gender" class="gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+            薪资：<input type="text" class="salary" name="salary" />
+            就业城市：<select name="city" class="city">
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="广州">广州</option>
+                <option value="深圳">深圳</option>
+                <option value="曹县">曹县</option>
+            </select>
+
+            <button class="add">录入</button>
+        </form>
+
+        <h1>就业榜</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>薪资</th>
+                    <th>就业城市</th>
+                    <th>录入时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1001</td>
+                    <td>欧阳霸天</td>
+                    <td>19</td>
+                    <td>男</td>
+                    <td>15000</td>
+                    <td>上海</td>
+                    <td>2023/07/12 08:08:08</td>
+                    <td>
+                        <a href="javascript:">删除</a>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+        <script>
+            // 参考数据
+            const initData = [
+                {
+                    stuId: 1,
+                    uname: "迪丽热巴",
+                    age: 22,
+                    gender: "女",
+                    salary: "12000",
+                    city: "北京",
+                    time: "2099/9/9 08:08:08",
+                },
+            ];
+
+            // localStorage.setItem("data", JSON.stringify(initData));
+            // 1.渲染业务
+            // 1.1 先读取本地存储的数据
+            // 1)本地存储有数据则记得转换为对象然后存储到变量里面，后期用于渲染页面
+            // 2)如果没有数据，则用空数组来代替
+            const arr = JSON.parse(localStorage.getItem("data")) || [];
+            // 1.2 利用map和join的方法来渲染页面
+            const tbody = document.querySelector("tbody");
+            function render() {
+                // 1) 利用map遍历数组，返回对应tr的数组
+                const trArr = arr.map(function (ele, index) {
+                    return `
+                        <tr>
+                            <td>${ele.stuId}</td>
+                            <td>${ele.uname}</td>
+                            <td>${ele.age}</td>
+                            <td>${ele.gender}</td>
+                            <td>${ele.salary}</td>
+                            <td>${ele.city}</td>
+                            <td>${ele.time}</td>
+                            <td>
+                                <a href="javascript:" data-id="${index}">删除</a>
+                            </td>
+                        </tr>
+                    `;
+                });
+                // 2) 把数组转换为字符串 join
+                const cnt = trArr.join("");
+                // 3) 把生成的字符串追加给tbody
+                tbody.innerHTML = cnt;
+            }
+            render();
+
+            // 2.新增业务
+            // 2.1 form表单注册提交事件，阻止默认行为
+            const uname = document.querySelector(".uname");
+            const age = document.querySelector(".age");
+            const gender = document.querySelector(".gender");
+            const salary = document.querySelector(".salary");
+            const city = document.querySelector(".city");
+
+            // 获取所有带有name属性的元素
+            const fields = document.querySelectorAll(".info [name]");
+            const info = document.querySelector(".info");
+            info.addEventListener("submit", function (e) {
+                // 阻止默认行为
+                e.preventDefault();
+
+                // 这里进行表单验证，如果不通过，直接终端，不再提交
+                for (let i = 0; i < fields.length; i++) {
+                    if (!fields[i].value) {
+                        return alert("输入内容不能为空");
+                    }
+                }
+
+                // 追加给数组里面
+                arr.push({
+                    stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
+                    uname: uname.value,
+                    age: age.value,
+                    gender: gender.value,
+                    salary: salary.value,
+                    city: city.value,
+                    time: getMyDate(),
+                });
+
+                this.reset();
+                // 调用渲染函数
+                render();
+
+                localStorage.setItem("data", JSON.stringify(arr));
+            });
+
+            function getMyDate() {
+                const date = new Date();
+
+                const y = date.getFullYear();
+                let mon = date.getMonth() + 1;
+                mon = mon < 10 ? "0" + mon : mon;
+                let d = date.getDate();
+                d = d < 10 ? "0" + d : d;
+                let h = date.getHours();
+                h = h < 10 ? "0" + h : h;
+                let m = date.getMinutes();
+                m = m < 10 ? "0" + m : m;
+                let s = date.getSeconds();
+                s = s < 10 ? "0" + s : s;
+
+                return `${y}/${mon}/${d} ${h}:${m}:${s}`;
+            }
+
+            // 3.删除操作
+            // 3.1 事件委托 tbody
+            tbody.addEventListener("click", function (e) {
+                if (e.target.tagName === "A") {
+                    if (confirm("你确定要删除这条数据嘛？")) {
+                        // 得到当前元素的自定义属性 data-id
+                        arr.splice(e.target.dataset.id, 1);
+                        // 重新渲染一次
+                        render();
+
+                        localStorage.setItem("data", JSON.stringify(arr));
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

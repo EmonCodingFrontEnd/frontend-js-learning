@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>11_String常用方法</title>
+    </head>
+    <body>
+        <script>
+            // split 把字符串转换为数组
+            // const str = "pink,red";
+            // const arr = str.split(",");
+            // console.log(arr);
+
+            // substring 字符串截图
+            // const str = "今天又要做核酸了";
+            // console.log(str.substring(5, 7)); // 核酸
+
+            // startsWith 判断当前字符串是否以给定字符串开头
+            // const str = "今天又要做核酸了";
+            // console.log(str.startsWith("今天")); // true
+            // console.log(str.endsWith("核酸")); // false
+
+            // includes
+            const str = "今天又要做核酸了";
+            console.log(str.includes("做核酸")); // true
+            console.log(str.includes("做核酸", 5)); // false
+        </script>
+    </body>
+</html>

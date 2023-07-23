@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>07_随机数函数</title>
+    </head>
+    <body>
+        <script>
+            // 生成0-1之间的随机数，包括0不包括1
+            console.log(Math.random());
+            // 生成0-10的随机数
+            console.log(parseInt(Math.random() * (10 + 1)));
+            // 生成5-10的随机数
+            console.log(parseInt(Math.random() * (5 + 1)) + 5);
+
+            // 生成n-m的随机数
+            function getRandom(n = 0, m = 1) {
+                n = n < 0 ? 0 : n;
+                m = m < 1 ? 1 : m;
+                if (n >= m) {
+                    throw new Error(`n=${n} must be less than m=${m}!`);
+                }
+                return Math.floor(Math.random() * (m - n + 1)) + n;
+            }
+            console.log(getRandom(5, 10));
+        </script>
+    </body>
+</html>

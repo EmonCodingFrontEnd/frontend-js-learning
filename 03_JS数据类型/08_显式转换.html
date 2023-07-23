@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>08_显式转换</title>
+    </head>
+    <body>
+        <script>
+            let str = "123";
+            console.log(typeof Number(str)); // number
+            console.log(Number("pink")); // NaN
+            console.log(typeof Number("pink")); // number
+
+            console.log(parseInt("12px")); // 12
+            console.log(parseInt("65.00KG")); // 65
+            console.log(parseInt("65.20KG")); // 65
+            console.log(parseInt("65.208KG")); // 65
+            console.log(parseInt("65.208KG").toFixed(2)); // 65.00
+            console.log(parseFloat("12px")); // 12
+            console.log(parseFloat("65.00KG")); // 65
+            console.log(parseFloat("65.20KG")); // 65.2
+            console.log(parseFloat("65.20KG").toFixed(2)); // 65.20
+            console.log(parseFloat("65.208KG")); // 65.208
+            console.log(parseFloat("65.208KG").toFixed(2)); // 65.21
+            console.log(parseFloat("65.206KG").toFixed(2)); // 65.21
+            console.log(parseFloat("65.205KG").toFixed(2)); // 65.20
+        </script>
+    </body>
+</html>

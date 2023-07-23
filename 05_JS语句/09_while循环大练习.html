@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>09_while循环大练习</title>
+    </head>
+    <body>
+        <script>
+            /* // 页面输出1-100
+            let i = 1;
+            while (i <= 100) {
+                document.write(`这是第${i}个数<br>`);
+                i++;
+            } */
+
+            /* // 计算1到100的总和并输出
+            let sum = 0;
+            let i = 1;
+            while (i <= 100) {
+                sum += i;
+                i++;
+            }
+            document.write(`1到100的总和：${sum}`); */
+
+            // 计算1到100的所有偶数总和并输出
+            let sum = 0;
+            let i = 1;
+            while (i <= 100) {
+                if (i % 2 === 0) {
+                    sum += i;
+                }
+                i++;
+            }
+            document.write(`1到100的偶数总和：${sum}`);
+        </script>
+    </body>
+</html>

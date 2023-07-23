@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>03_显示格式化的实际</title>
+        <style>
+            div {
+                width: 300px;
+                height: 40px;
+                border: 1px solid pink;
+                text-align: center;
+                line-height: 40px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            const div = document.querySelector("div");
+            function getMyDate() {
+                const date = new Date();
+
+                const y = date.getFullYear();
+                let mon = date.getMonth() + 1;
+                mon = mon < 10 ? "0" + mon : mon;
+                let d = date.getDate();
+                d = d < 10 ? "0" + d : d;
+                let h = date.getHours();
+                h = h < 10 ? "0" + h : h;
+                let m = date.getMinutes();
+                m = m < 10 ? "0" + m : m;
+                let s = date.getSeconds();
+                s = s < 10 ? "0" + s : s;
+
+                return `今天是：${y}年${mon}月${d}日 ${h}:${m}:${s}`;
+            }
+
+            div.innerHTML = getMyDate();
+            setInterval(function () {
+                div.innerHTML = getMyDate();
+            }, 1000);
+        </script>
+    </body>
+</html>

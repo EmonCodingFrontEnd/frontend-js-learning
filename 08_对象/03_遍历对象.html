@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>03_遍历对象</title>
+    </head>
+    <body>
+        <script>
+            // for in不推荐遍历数组，因为得到的变量是string类型
+            // let arr = ["pink", "red", "blud"];
+            // for (let k in arr) {
+            //     // console.log(typeof k); // string
+            //     console.log(arr[k]);
+            // }
+
+            let obj = {
+                uname: "andy",
+                age: 18,
+                sex: "男",
+            };
+            for (let k in obj) {
+                console.log(k); // 打印属性名
+                console.log(obj[k]); // 打印属性值
+            }
+        </script>
+    </body>
+</html>

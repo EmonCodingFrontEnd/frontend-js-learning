@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>07_scrollTop细节</title>
+        <style>
+            body {
+                height: 3000px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            document.documentElement.scrollTop = 800;
+            window.addEventListener("scroll", function () {
+                /**
+                 * 1-必须写到里面
+                 * 2-得到是什么数据？数字型，不带单位。
+                 * 3-可赋值
+                 */
+                console.log(document.documentElement.scrollTop);
+            });
+        </script>
+    </body>
+</html>

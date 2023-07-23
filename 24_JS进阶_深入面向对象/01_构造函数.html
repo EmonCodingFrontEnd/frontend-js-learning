@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>01_构造函数</title>
+    </head>
+    <body>
+        <script>
+            // // 构造函数 公共的属性和方法，封装到Star构造函数里面了
+            // function Star(uname, age) {
+            //     this.uname = uname;
+            //     this.age = age;
+            //     this.sing = function () {
+            //         console.log("我会唱歌！");
+            //     };
+            // }
+
+            // // 实例对象，获得了构造函数中封装的所有逻辑
+            // const ldh = new Star("刘德华", 18);
+            // const zxy = new Star("张学友", 19);
+            // console.log(ldh === zxy); // false
+            // console.log(ldh.sing === zxy.sing); // false
+
+            // ==================================================
+
+            // 1.公共的属性写到构造函数里面
+            function Star(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            }
+            // 2.公共的方法写到原型对象上
+            Star.prototype.sing = function () {
+                console.log("我会唱歌！");
+            };
+
+            // 实例对象，获得了构造函数中封装的所有逻辑
+            const ldh = new Star("刘德华", 18);
+            const zxy = new Star("张学友", 19);
+            console.log(ldh === zxy); // false
+            console.log(ldh.sing === zxy.sing); // true
+
+            console.dir(Star.prototype); // object
+            console.dir(Star.prototype.prototype); // undefined
+        </script>
+    </body>
+</html>

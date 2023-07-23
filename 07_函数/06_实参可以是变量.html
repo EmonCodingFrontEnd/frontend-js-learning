@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>06_实参可以是变量</title>
+    </head>
+    <body>
+        <script>
+            // 求 n ~ m 的累加和
+            function getSum(n = 0, m = 0) {
+                let sum = 0;
+                for (let i = n; i <= m; i++) {
+                    sum += i;
+                }
+                document.write(`n=${n},m=${m},求和=${sum}<br>`);
+            }
+            getSum();
+            getSum(1, 10);
+        </script>
+    </body>
+</html>

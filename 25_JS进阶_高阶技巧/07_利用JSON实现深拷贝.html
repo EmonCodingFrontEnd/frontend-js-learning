@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>07_利用JSON实现深拷贝</title>
+    </head>
+    <body>
+        <script>
+            const obj = {
+                uname: "pink",
+                age: 18,
+                hobby: ["乒乓球", "足球"],
+                family: {
+                    baby: "小pink",
+                },
+            };
+
+            // 拷贝函数
+            const ostr = JSON.stringify(obj);
+            const o = JSON.parse(ostr);
+
+            o.hobby[0] = "篮球";
+            o.family.baby = "小小pink";
+            console.log(o);
+            console.log(obj);
+        </script>
+    </body>
+</html>

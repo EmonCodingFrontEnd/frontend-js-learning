@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>12_循环的嵌套</title>
+    </head>
+    <body>
+        <script>
+            // 假如每天记住5个单词，3天后一共能记住多少单词
+            let sum = 0;
+            for (let i = 1; i <= 3; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    sum++;
+                    document.write(`第${i}天，记录第${j}个单词<br>`);
+                }
+                document.write("--------------------<br>");
+            }
+            document.write(`一共记录了${sum}个单词<br>`);
+        </script>
+    </body>
+</html>

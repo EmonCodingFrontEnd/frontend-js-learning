@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>01_局部作用域_块作用域</title>
+    </head>
+    <body>
+        <script>
+            // let声明的变量有块作用域
+            // for (let i = 1; i <= 3; i++) {
+            //     // 块作用域
+            //     console.log(i);
+            // }
+            // console.log(i); // Uncaught ReferenceError: i is not defined
+
+            // var声明的变量没有块作用域
+            // for (var i = 1; i <= 3; i++) {
+            //     // 块作用域
+            //     console.log(i);
+            // }
+            // console.log(i); // 4
+
+            // if (true) {
+            //     let i = 10;
+            // }
+            // console.log(i); // Uncaught ReferenceError: i is not defined
+        </script>
+    </body>
+</html>

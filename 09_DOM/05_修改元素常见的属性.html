@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>05_修改元素常见的属性</title>
+    </head>
+    <body>
+        <img src="./imgs/1.webp" alt="" />
+        <script>
+            // 1.获取图片元素
+            const img = document.querySelector("img");
+            // 2.修改图片对象的属性
+            img.src = "./imgs/2.webp";
+            img.title = "刘德华的图片";
+            img.alt = "刘德华的图片看不到了";
+        </script>
+    </body>
+</html>
