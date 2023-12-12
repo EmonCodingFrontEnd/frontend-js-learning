@@ -1683,6 +1683,7 @@ for (let k in obj) {
 - for in语法中的k是一个遍历，在循环的过程中依次代表对象的属性名。
 - 由于k是变量，所以必须使用[]语法解析。
 - 一定记住：<span style="color:red;font-weight:bold;">k</span>是获得对象的<span style="color:red;font-weight:bold;">属性名</span>，<span style="color:red;font-weight:bold;">对象名[k]</span>是获得<span style="color:red;font-weight:bold;">属性值</span>
+- forin枚举对象的属性，包括从原型链中继承而来的属性，可以用obj.hasOwnProperty(k)来判断是不是自身定义的属性。
 
 ## 9.4、内置对象
 
@@ -3968,7 +3969,7 @@ for (let k in o) {
 
 - **Object.keys**
 
-  - **作用：**静态方法获取对象中所有属性（键）
+  - **作用：**静态方法获取对象自身的可枚举的字符串（键）属性名组成的数组。
   - **语法：**
 
   ```js
